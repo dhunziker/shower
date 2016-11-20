@@ -9,20 +9,20 @@
 </head>
 <body class="shower list">
 	<header class="caption">
-		<h1>Shower Presentation Engine</h1>
-		<p>Yours Truly, Famous Inc.</p>
+		<h1>What's new in Spark 2.0?</h1>
+		<!--<p>Yours Truly, Famous Inc.</p>-->
 	</header>
 	<section class="slide" id="cover">
-		<h2>Shower Presentation Engine</h2>
-		<p>Brought to you by <a href="http://pepelsbey.net">Vadim Makeev</a></p>
-		<img src="pictures/cover.jpg" alt="" class="cover">
+		<h2>What's new in Spark 2.0?</h2>
+		<p>Presentation by <a href="https://uk.linkedin.com/in/dennis-hunziker-b3251282">Dennis Hunziker</a></p>
+		<img width="100%" src="pictures/cover.jpg" alt="" class="cover">
 		<!--
 			To apply styles to the certain slides
 			set slide ID to get needed elements
 			-->
 		<style>
 			#cover h2 {
-				margin:30px 0 0;
+				margin:150px 0 0;
 				color:#FFF;
 				text-align:center;
 				font-size:70px;
@@ -34,152 +34,184 @@
 				font-style:italic;
 				font-size:20px;
 				}
-				#cover p a {
-					color:#FFF;
-					}
+			#cover p a {
+				color:#FFF;
+			}
 		</style>
 	</section>
 	<section class="slide">
-		<h2>Shower key features</h2>
+		<h2>Who am I</h2>
+		<img width="200px" src="pictures/billy.jpg" alt="" style="float: right;">
 		<ol>
-			<li>Built on HTML, CSS and vanilla JavaScript</li>
-			<li>Works in all modern browsers</li>
-			<li>Themes are separated from engine</li>
-			<li>Modular and extensible</li>
-			<li>Fully keyboard accessible</li>
-			<li>Printable to PDF</li>
-		</ol>
-		<p class="note">Shower ['ʃəuə] noun. A person or thing that shows.</p>
-	</section>
-	<section class="slide">
-		<h2>Plain text on your slides</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur <a href="#4">adipisicing</a> elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, <em>quis nostrud</em> exercitation ullamco laboris <strong>nisi ut aliquip</strong> ex ea commodo consequat. Duis aute irure <i>dolor</i> in reprehenderit in voluptate velit esse cillum <b>dolore</b> eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in <code>&lt;culpa&gt;</code> qui officia deserunt mollit anim id est laborum.</p>
-	</section>
-	<section class="slide">
-		<h2>Two columns if you like</h2>
-		<p class="double">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
-	</section>
-	<section class="slide">
-		<h2>All kind of lists</h2>
-		<ol>
-			<li>Simple lists are marked with bullets</li>
-			<li>Ordered lists begin with a number</li>
-			<li>You can even nest lists one inside another
-				<ul>
-					<li>Or mix their types</li>
-					<li>But do not go too far</li>
-					<li>Otherwise audience will be bored</li>
-				</ul>
-			</li>
-			<li>Look, seven rows exactly!</li>
+			<li><a href="https://twitter.com/dennishunziker" class="twitter-follow-button" data-show-count="false">@dennishunziker</a></li>
+			<li>Software Engineer, currently working for BlackRock</li>
+			<li>Originally from Zurich, Switzerland</li>
+			<li>Working on projects using Spring XD, Cassandra, Neo4j and more recently, Spark (with Parquet)</li>
+			<li>Spending offline time with 3 yr old Pomeranian Billy, training Muay Thai and preparing for the Brighton Marathon</li>
 		</ol>
 	</section>
 	<section class="slide">
-		<h2>Serious citations</h2>
-		<figure>
-			<blockquote>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
-			</blockquote>
-			<figcaption>Marcus Tullius Cicero</figcaption>
-		</figure>
+		<h2>About this Talk</h2>
+		<ol>
+			<li>Spark 2.0 was released in July 2016</li>
+			<li>Since then, versions 2.0.1 and 2.0.2 have been released, containing more than 300 stability and bug fixes</li>
+			<li>Main selling points of version 2.0 are the improvements in API usability and performance</li>
+			<li>Not covering MLlib and SparkR</li>
+		</ol>
 	</section>
 	<section class="slide">
-		<h2>Code samples</h2>
+		<h2>What's Changed</h2>
+		<p>Changes in behaviour that should be considered before migrating:</p>
+		<ol>
+			<li>Default build is using Scala 2.11 instead of 2.10</li>
+			<li>Floating point literals are being inferred as Decimal types</li>
+			<li>Parquet summary files no longer written by default</li>
+			<li>Some breaking changes to the JavaRDD were made (e.g. mapPartitions and countByKey), those issues were already present in 1.0</li>
+		</ol>
+	</section>
+	<section class="slide">
+		<h2>What's Going</h2>
+		<p>Features that might get removed in further 2.x releases:</p>
+		<ol>
+			<li>Java 7 support (Last released Apr 2015)</li>
+			<li>Python 2.6 support (Last released Oct 2013)</li>
+			<li>Fine-grained mode in Apache Mesos</li>
+		</ol>
+	</section>
+	<section class="slide">
+		<h2>What's Gone</h2>
+		<p>Some features that were removed in this release:</p>
+		<ol>
+			<li>org.apache.spark.Logging</li>
+			<li>Methods deprecated in Spark 1.x</li>
+			<li>Some advanced streaming receivers (e.g. Twitter and Akka)</li>
+			<li>DataFrame no longer exists as a separate class</li>
+			<li>Hadoop 2.1 support</li>
+		</ol>
+	</section>
+	<section class="slide">
+		<h2>SparkSession</h2>
 		<pre>
-			<code>&lt;!DOCTYPE html&gt;</code>
-			<code class="mark">&lt;html lang="en"&gt;</code>
-			<code><mark>&lt;head&gt;</mark> <span class="comment">&lt;!--Comment--&gt;</span></code>
-			<code>    &lt;title&gt;Shower&lt;/title&gt;</code>
-			<code>    &lt;meta charset="<mark class="important">UTF-8</mark>"&gt;</code>
-			<code>    &lt;link rel="stylesheet" href="screen.css"&gt;</code>
-			<code><mark>&lt;/head&gt;</mark></code>
+			<code>val spark = SparkSession.builder() // Replaces SQLContext</code>
+    		<code>	.appName("My App")</code>
+    		<code>	.master("local[2]")</code>
+    		<code>	.enableHiveSupport() // Replaces HiveContext</code>
+    		<code>	.getOrCreate()</code>
 		</pre>
 	</section>
 	<section class="slide">
-		<h2>Even tables</h2>
-		<table>
-		<tr>
-			<th scope="col">Locavore</th>
-			<th>Umami</th>
-			<th>Helvetica</th>
-			<th>Vegan</th>
-		</tr>
-		<tr>
-			<th scope="row">Fingerstache</th>
-			<td>Kale</td>
-			<td>Chips</td>
-			<td>Keytar</td>
-		</tr>
-		<tr>
-			<th scope="row">Sriracha</th>
-			<td>Gluten-free</td>
-			<td>Ennui</td>
-			<td>Keffiyeh</td>
-		</tr>
-		<tr>
-			<th scope="row">Thundercats</th>
-			<td>Jean</td>
-			<td>Shorts</td>
-			<td>Biodiesel</td>
-		</tr>
-		<tr>
-			<th scope="row">Terry</th>
-			<td>Richardson</td>
-			<td>Swag</td>
-			<td>Blog</td>
-		</tr>
-		</table>
-		<p>It’s good to have information organized.</p>
+		<h2>Example Data</h2>
+		<ol>
+			<li>Dog density data available under Open Government Licence</li>
+			<li>CSV with 2 columns, postcode and estimated dog population</li>
+			<li>Postcode data from doogal.co.uk</li>
+		</ol>
+		<pre>
+			<code>PostcodeDistrict,EstimatedDogPopulation</code>
+			<code>AB10,"1,921.75"</code>
+			<code>AB11,"2,377.35"</code>
+			<code>AB12,"4,130.35"</code>
+		</pre>
+	</section>
+	<section class="slide">
+		<div>
+			<h2>Dataset</h2>
+			<ol>
+				<li>Supports primitive types, case classes and tuples</li>
+				<li>Use as[type] to turn DataFrame into typed Dataset</li>
+				<li>Provides additional compiler support for writing correct logic</li>
+				<li>When reading data, type and/or schema can be provided, but inference doesn't yet work consistently</li>
+				<li>Creating additional types for query results isn't very convenient</li>
+			</ol>
+		</div>
+	</section>
+	<section class="slide">
+		<div>
+			<h2>DataFrame</h2>
+			<ol>
+				<li>Is now just a type alias for Dataset[Row]</li>
+				<li>Get values using ResultSet style accessors (e.g. getString(Int), getInt(Int))</li>
+				<li>Feels more SQL-like to use, especially for joins</li>
+			</ol>
+		</div>
+	</section>
+	<section class="slide">
+		<h2>Accumulator V2</h2>
+		<ol>
+			<li>New API available in AccumulatorV2, can be extended to support user defined types</li>
+			<li>Meant to perform better than the previous implementation</li>
+		</ol>
+		<pre>
+			<code>// AccumulatorV2, keeps track of sum and count</code>
+  			<code>val acc2 = spark.sparkContext.doubleAccumulator</code>
+  			<code>dogDensity.foreach(row =></code>
+			<code>	acc2.add(row.estimatedDogPopulation))</code>
+		</pre>
+	</section>
+	<section class="slide">
+		<h2>Typed Aggregator</h2>
+		<ol>
+			<li>Experimental API for user defined aggregations, i.e. taking a bunch of rows and reduce them to a single value</li>
+			<li>Has been extended in 2.0 to support additional types</li>
+		</ol>
+	</section>
+	<section class="slide">
+		<h2>New Features</h2>
+		<ol>
+			<li>CSV supported natively without having to include additional packages</li>
+			<li>Off-heap StorageLevel available for use in persisting/caching DataFrame</li>
+			<li>If enabled, execution engine might make use of off-heap allocation as well</li>
+		</ol>
+	</section>
+
+	<section class="slide">
+		<h2>Performance Improvements</h2>
+		<ol>
+			<li>The Catalyst optimizer has been improved</li>
+			<li>Introduction of whole-stage code generation, which collapses entire queries into single functions</li>
+			<li>DataFrames sourced from many files are coalesced automatically</li>
+		</ol>
+	</section>
+	<section class="slide">
+		<h2>Structured Streaming</h2>
+		<ol>
+			<li>New API to run incremental queries continuously</li>
+			<li>Not part of the Spark Streaming project</li>
+			<li>The aim was to support the same operations as batch queries for for streams</li>
+			<li>It's an ALPHA release part of 2.0 and not yet ready for production</li>
+		</ol>
+	</section>
+	<section class="slide">
+		<h2>Sources</h2>
+		<ol>
+			<li><a href="https://en.wikipedia.org/wiki/Apache_Spark#History">Apache Spark History on Wikipedia</a></li>
+			<li><a href="https://spark.apache.org/releases/spark-release-2-0-0.html">Spark Release 2.0.0</a></li>
+			<li><a href="https://spark.apache.org/releases/spark-release-2-0-1.html">Spark Release 2.0.1</a></li>
+			<li><a href="https://spark.apache.org/releases/spark-release-2-0-2.html">Spark Release 2.0.2</a></li>
+			<li><a href="http://spark.apache.org/docs/2.0.2/">Spark 2.0.2 Docs</a></li>
+			<li><a href="http://shop.oreilly.com/product/0636920046967.do">Karau, Warren (2016). High Performance Spark. O'Reilly Media.</a></li>
+			<li><a href="https://www.gitbook.com/book/jaceklaskowski/mastering-apache-spark/details">Laskowski (2016). Mastering Apache Spark 2.0</a></li>
+		</ol>
 	</section>
 	<section class="slide" id="picture">
-		<h2>Pictures</h2>
-		<img src="pictures/picture.jpg" alt="" class="cover">
+		<h2>Thank You!</h2>
+		<img src="pictures/spark.jpg" alt="" class="cover" style="width: 100%;">
 		<style>
 			#picture h2 {
 				color:#FFF;
 				}
 		</style>
 	</section>
-	<section class="slide">
-		<h2 class="shout shrink">You can even shout this way</h2>
-	</section>
-	<section class="slide">
-		<h2>Inner navigation</h2>
-		<ol>
-			<li>Lets you reveal list items one by one</li>
-			<li class="next">To keep some key points</li>
-			<li class="next">In secret from audience</li>
-			<li class="next">But it will work only once</li>
-			<li class="next">Nobody wants to see the same joke twice</li>
-		</ol>
-	</section>
-	<section class="slide grid">
-		<h2>All nicely aligned to grid</h2>
-	</section>
-	<section class="slide" id="see-more">
-		<h2 class="shout">
-			<img src="pictures/logo.svg" alt="Shower logo">
-			<a href="https://github.com/shower/shower">See more on GitHub</a>
-		</h2>
-		<style>
-			#see-more h2 {
-				font-size:100px
-				}
-			#see-more img {
-				width:0.72em;
-				height:0.72em;
-				}
-		</style>
-	</section>
-	<p class="badge">
-		<a href="https://github.com/shower/shower">Fork me on GitHub</a>
-	</p>
+	<!--<p class="badge">-->
+		<!--<a href="https://github.com/shower/shower">Fork me on GitHub</a>-->
+	<!--</p>-->
 	<!--
 		To hide progress bar from entire presentation
 		just remove “progress” element.
 		-->
 	<div class="progress"></div>
 	<script src="shower/shower.min.js"></script>
+	<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 	<!-- Copyright © 2015 Yours Truly, Famous Inc. -->
 	<!-- Photos by John Carey, fiftyfootshadows.net -->
 </body>
