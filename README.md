@@ -36,7 +36,7 @@ And you’ll find your presentation in `prepared` folder with only needed files 
 
 	npm run publish
 
-And you’ll have your slides published on `http://username.github.io/my-slides/`.
+And you’ll have your slides published on `http://dhunziker.github.io/spark-two-presentation/`.
 
 ## Usage Examples
 
