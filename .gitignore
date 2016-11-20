@@ -1,3 +1,4 @@
 .idea
 spark-two-presentation.iml
 node_modules
+.publish
